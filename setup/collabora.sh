@@ -18,7 +18,7 @@ echo $ALLOWEDDOMAIN
 docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN --restart always --cap-add MKNOD collabora/code
 
 echo "Generating Nginx proxy configuration for Collabora"
-cat >> /etc/nginx/conf.d/local.conf <<'EOF'
+cat >> /etc/nginx/conf.d/collabora.conf <<'EOF'
 server {
     listen       443 ssl;
     server_name  collabora.PRIMAHOSTNAME;
