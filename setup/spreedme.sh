@@ -69,3 +69,6 @@ echo "Adding FW rule for 8443"
 ufw allow 8443
 
 cp conf/spreed_conf.php /usr/local/lib/owncloud/apps/spreedme/config/config.php
+
+service spreed-webrtc restart
+service coturn restart
