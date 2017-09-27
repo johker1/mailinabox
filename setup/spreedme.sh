@@ -17,10 +17,11 @@ apt dist-upgrade -y
 echo "Adding turn Server has dependency of Spreed Me"
 apt install coturn -y
 
-echo "Enabling TURNSERVER in Config"
+echo "Enabling TURNSERVER"
 echo TURNSERVER_ENABLED=1 > /etc/default/coturn
 
-echo "Making TURNSERVER in Config"
+echo "Turn Config"
+
 
 cat > /etc/turnserver.conf <<'EOF'
 no-stun
@@ -29,7 +30,7 @@ tls-listening-port=3478
 fingerprint
 lt-cred-mech
 use-auth-secret
-static-auth-secret=a1bd247113a1713e569c1cba6294eba9ad88bd1281b449420773047fd9137966
+static-auth-secret=SPREEDSECRET
 realm=HOSTNAME
 total-quota=100
 bps-capacity=0
@@ -49,28 +50,40 @@ listen = 127.0.0.1:8080
 basePath = /webrtc/
 root = /usr/share/spreed-webrtc-server/www
 [app]
-sessionSecret = a922aa7e7d24fc4db87c73528d8fe3456b903716e4fb80280e42d9ba2ef650e2
-encryptionSecret = 692a2e89adc9834c9333bc578f472f5f7be1176e5d78e32c8d403c2c2a2e2676
+sessionSecret = SSECRET
+encryptionSecret = ESECRET
 authorizeRoomJoin = true
-serverToken = 3e0b42e59ec1288420c177a53888b11d9c9e5b78930fee5b3b46d2c10679745e
+serverToken = STOKEN
 serverRealm = local
 extra = /usr/local/lib/owncloud/apps/spreedme/extra
 plugin = extra/static/owncloud.js
 turnURIs = turn:HOSTNAME:8443?transport=udp turn:HOSTNAME:8443?transport=tcp
-turnSecret = a1bd247113a1713e569c1cba6294eba9ad88bd1281b449420773047fd9137966 
+turnSecret = SPREEDSECRET 
 stunURIs = stun:stun.spreed.me:443 
 [users]
 enabled = true
 mode = sharedsecret
-sharedsecret_secret = 3ea124dcdcf3ca1c1d2dbba48ae525eb9f810abf4329476f98d0a27216a2bff5
+sharedsecret_secret = SPREEDSECRET
 EOF
-
-sed -i -e "s/HOSTNAME/${HOSTNAME}/g" /etc/spreed/webrtc.conf
 
 echo "Adding FW rule for 8443"
 ufw allow 8443
 
 cp conf/spreed_conf.php /usr/local/lib/owncloud/apps/spreedme/config/config.php
+
+SPREEDSECRET="$(openssl rand -hex 32)"
+SSECRET="$(openssl rand -hex 32)"
+ESECRET="$(openssl rand -hex 32)"
+STOKEN="$(openssl rand -hex 32)"
+
+sed -i -e "s/HOSTNAME/${HOSTNAME}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/SSECRET/${SSECRET}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/ESECRET/${ESECRET}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/STOKEN/${STOKEN}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/turnserver.conf
+sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/default/coturn
+sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /usr/local/lib/owncloud/apps/spreedme/config/config.php
 
 service spreed-webrtc restart
 service coturn restart
