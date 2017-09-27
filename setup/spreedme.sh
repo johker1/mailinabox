@@ -30,13 +30,15 @@ fingerprint
 lt-cred-mech
 use-auth-secret
 static-auth-secret=a1bd247113a1713e569c1cba6294eba9ad88bd1281b449420773047fd9137966
-realm=$HOSTNAME
+realm=HOSTNAME
 total-quota=100
 bps-capacity=0
 stale-nonce
 no-loopback-peers
 no-multicast-peers
 EOF
+
+sed -i -e "s/HOSTNAME/${HOSTNAME}/g" /etc/turnserver.conf
 
 echo "Adding TURNSERVER and spreedme to Webrtc Conf"
 
