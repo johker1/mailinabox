@@ -357,6 +357,31 @@ hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable 
 hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable calendar
 hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable spreedme
 
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable activity
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable admin_audit
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable comments
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable encryption
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable federation
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_external
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_pdfviewer
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_sharing
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_texteditor
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_trashbin
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_versions
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable files_videoplayer
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable firstrunwizard
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable gallery
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable nextcloud_announcements
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable notifications
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable  sharebymail
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable  survey_client
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable  systemtags
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable  theming
+hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable  updatenotification
+
+
+
+
 # When upgrading, run the upgrade script again now that apps are enabled. It seems like
 # the first upgrade at the top won't work because apps may be disabled during upgrade?
 # Check for success (0=ok, 3=no upgrade needed).
