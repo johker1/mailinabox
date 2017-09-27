@@ -44,14 +44,9 @@ InstallNextcloud() {
 
 	# Remove the current owncloud/Nextcloud
 	rm -rf /usr/local/lib/owncloud
+	mkdir /usr/local/lib/owncloud
 
-	# Download and verify
-	wget_verify https://download.nextcloud.com/server/releases/nextcloud-$version.zip $hash /tmp/nextcloud.zip
-
-	# Extract ownCloud/Nextcloud
-	unzip -q /tmp/nextcloud.zip -d /usr/local/lib
-	mv /usr/local/lib/nextcloud /usr/local/lib/owncloud
-	rm -f /tmp/nextcloud.zip
+	git clone https://github.com/johker1/nextcloud-mb-latest.git /usr/local/lib/owncloud
 
 	# The two apps we actually want are not in Nextcloud core. Download the releases from
 	# their github repositories.
