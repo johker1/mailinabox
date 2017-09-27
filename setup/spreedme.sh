@@ -1,3 +1,5 @@
+source /etc/mailinabox.conf # load global vars
+
 echo "Adding Spreed ME Web RTc Server Ubuntu Repo and Instalation"
 apt-add-repository ppa:strukturag/spreed-webrtc-unstable -y
 apt update
@@ -39,7 +41,7 @@ no-loopback-peers
 no-multicast-peers
 EOF
 
-sed -i -e "s/HOSTNAME/${HOSTNAME}/g" /etc/turnserver.conf
+sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/turnserver.conf
 
 echo "Adding TURNSERVER and spreedme to Webrtc Conf"
 
@@ -76,7 +78,7 @@ SSECRET="$(openssl rand -hex 32)"
 ESECRET="$(openssl rand -hex 32)"
 STOKEN="$(openssl rand -hex 32)"
 
-sed -i -e "s/HOSTNAME/${HOSTNAME}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/SSECRET/${SSECRET}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/ESECRET/${ESECRET}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/STOKEN/${STOKEN}/g" /etc/spreed/webrtc.conf
