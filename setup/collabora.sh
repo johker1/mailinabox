@@ -13,8 +13,9 @@ docker pull collabora/code
 ALLOWEDDOMAIN="'domain="
 ALLOWEDDOMAIN="$ALLOWEDDOMAIN$(echo $PRIMARY_HOSTNAME | sed -e 's/\./\\\\\./g')'"
 
-docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN \
-    --restart always --cap-add MKNOD collabora/code
+echo $ALLOWEDDOMAIN
+
+docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN --restart always --cap-add MKNOD collabora/code
 
 echo "Generating Nginx proxy configuration for Collabora"
 cat >> /etc/nginx/conf.d/local.conf <<'EOF'
