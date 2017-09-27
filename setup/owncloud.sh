@@ -7,7 +7,7 @@ source /etc/mailinabox.conf # load global vars
 
 # ### Installing Nextcloud
 
-echo "Installing Nextcloud (contacts/calendar)..."
+echo "Installing Nextcloud (contacts/calendar/spreedme)..."
 
 # Keep the php5 dependancies for the owncloud upgrades
 apt_install \
@@ -59,6 +59,10 @@ InstallNextcloud() {
 	wget_verify https://github.com/nextcloud/calendar/releases/download/v1.5.3/calendar.tar.gz b370352d1f280805cc7128f78af4615f623827f8 /tmp/calendar.tgz
 	tar xf /tmp/calendar.tgz -C /usr/local/lib/owncloud/apps/
 	rm /tmp/calendar.tgz
+
+	wget https://nextcloud.struktur.de/s/x81symJCy7MD6hh/download -O /tmp/spreedme.tgz
+	tar xf /tmp/spreedme.tgz -C /usr/local/lib/owncloud/apps/
+	rm /tmp/spreedme.tgz
 
 	# Fix weird permissions.
 	chmod 750 /usr/local/lib/owncloud/{apps,config}
