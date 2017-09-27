@@ -20,7 +20,7 @@ class Config {
 	const SPREED_WEBRTC_BASEPATH = '/webrtc/';
 	// This has to be the same `sharedsecret_secret` (64-character HEX string)
 	// you already set in the [users] section of the `server.conf` file from Spreed WebRTC server
-	const SPREED_WEBRTC_SHAREDSECRET = '3ea124dcdcf3ca1c1d2dbba48ae525eb9f810abf4329476f98d0a27216a2bff5';
+	const SPREED_WEBRTC_SHAREDSECRET = 'SPREEDSECRET';
 	// Set to true if at least one another Nextcloud instance uses the same Spreed WebRTC server
 	const SPREED_WEBRTC_IS_SHARED_INSTANCE = false;
 	// If set to false (default), all file transfers (e.g. when sharing a presentation or sending a file to another peer) are directly sent to the appropriate user in a peer-to-peer fashion.
