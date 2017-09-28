@@ -57,7 +57,6 @@ mkdir -p "$STORAGE_ROOT/dns/dnssec";
 
 ## Adds collabora entry to costum dns
 if grep -q collabora $STORAGE_ROOT/dns/custom.yaml; then
-    done;
 else
 echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP  >> $STORAGE_ROOT/dns/custom.yaml
 fi
