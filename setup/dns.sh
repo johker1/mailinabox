@@ -55,12 +55,6 @@ echo "include: /etc/nsd/zones.conf" >> /etc/nsd/nsd.conf;
 
 mkdir -p "$STORAGE_ROOT/dns/dnssec";
 
-## Adds collabora entry to costum dns
-if grep -q collabora $STORAGE_ROOT/dns/custom.yaml; then
-else
-echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP  >> $STORAGE_ROOT/dns/custom.yaml
-fi
-
 # TLDs don't all support the same algorithms, so we'll generate keys using a few
 # different algorithms. RSASHA1-NSEC3-SHA1 was possibly the first widely used
 # algorithm that supported NSEC3, which is a security best practice. However TLDs
