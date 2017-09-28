@@ -111,7 +111,7 @@ source setup/zpush.sh
 source setup/management.sh
 source setup/munin.sh
 source setup/spreedme.sh
-source setup/collabora.sh
+
 
 # Wait for the management daemon to start...
 until nc -z -w 4 127.0.0.1 10222
@@ -135,6 +135,7 @@ management/ssl_certificates.py -q
 
 # If there aren't any mail users yet, create one.
 source setup/firstuser.sh
+source setup/collabora.sh
 
 # Done.
 echo
