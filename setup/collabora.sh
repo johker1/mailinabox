@@ -55,7 +55,7 @@ EOF
 
 sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf]
 nginx -s reload
-
+echo collabora.$PRIMARY_HOSTNAME: $PRIMARY_IP > /home/user-data/dns/custom.yaml
 echo "Downloading external certbot because we want to manage this certificate"
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
