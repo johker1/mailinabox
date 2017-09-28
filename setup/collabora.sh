@@ -8,18 +8,17 @@ add-apt-repository ppa:canonical-kernel-team/ppa -y
 apt-get update
 apt install linux-virtual-lts-xenial -y
 
+
+echo "Installing Collabora code (docker)"
 docker pull collabora/code
-
 ALLOWEDDOMAIN="'domain="
-ALLOWEDDOMAIN="$ALLOWEDDOMAIN$(echo $PRIMARY_HOSTNAME | sed -e 's/\./\\\\\./g')'"
-
-docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN \
-    --restart always --cap-add MKNOD collabora/code
+ALLOWEDDOMAIN="docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN$(echo $PRIMARY_HOSTNAME | sed -e 's/\./\\\\\./g')' --restart always --cap-add MKNOD collabora/code"
+echo $ALLOWEDDOMAIN | bash
 
 echo "Generating Nginx proxy configuration for Collabora"
 cat >> /etc/nginx/conf.d/local.conf <<'EOF'
 server {
-    listen       443 ssl;
+    listen       80;
     server_name  collabora.PRIMAHOSTNAME;
     # static files
     location ^~ /loleaflet {
@@ -55,4 +54,5 @@ server {
 }
 EOF
 
-sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf]
+nginx -s reload
