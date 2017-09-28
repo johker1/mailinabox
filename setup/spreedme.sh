@@ -41,8 +41,6 @@ no-loopback-peers
 no-multicast-peers
 EOF
 
-sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/turnserver.conf
-
 echo "Adding TURNSERVER and spreedme to Webrtc Conf"
 
 cat > /etc/spreed/webrtc.conf<<'EOF'
@@ -78,13 +76,17 @@ SSECRET="$(openssl rand -hex 32)"
 ESECRET="$(openssl rand -hex 32)"
 STOKEN="$(openssl rand -hex 32)"
 
-sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/SSECRET/${SSECRET}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/ESECRET/${ESECRET}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/STOKEN/${STOKEN}/g" /etc/spreed/webrtc.conf
 sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/spreed/webrtc.conf
+sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/spreed/webrtc.conf
+
 sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/turnserver.conf
+sed -i -e "s/HOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/turnserver.conf
+
 sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/default/coturn
+
 sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /usr/local/lib/owncloud/apps/spreedme/config/config.php
 
 service spreed-webrtc restart
