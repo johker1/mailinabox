@@ -12,11 +12,19 @@ apt install linux-virtual-lts-xenial -y
 echo "Installing Collabora code (docker)"
 docker pull collabora/code
 ALLOWEDDOMAIN="'domain="
+<<<<<<< HEAD
 ALLOWEDDOMAIN="docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN$(echo $PRIMARY_HOSTNAME | sed -e 's/\./\\\\\./g')' --restart always --cap-add MKNOD collabora/code"
 echo $ALLOWEDDOMAIN | bash
+=======
+ALLOWEDDOMAIN="$ALLOWEDDOMAIN$(echo $PRIMARY_HOSTNAME | sed -e 's/\./\\\\\./g')'"
+
+echo $ALLOWEDDOMAIN
+
+docker run -t -d -p 127.0.0.1:9980:9980 -e $ALLOWEDDOMAIN --restart always --cap-add MKNOD collabora/code
+>>>>>>> 5e0bd1a50856006c6e445ff808e99232e4cee3a0
 
 echo "Generating Nginx proxy configuration for Collabora"
-cat >> /etc/nginx/conf.d/local.conf <<'EOF'
+cat > /etc/nginx/conf.d/collabora.conf <<'EOF'
 server {
     listen       80;
     server_name  collabora.PRIMAHOSTNAME;
@@ -54,5 +62,9 @@ server {
 }
 EOF
 
+<<<<<<< HEAD
 sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf]
 nginx -s reload
+=======
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf
+>>>>>>> 5e0bd1a50856006c6e445ff808e99232e4cee3a0
