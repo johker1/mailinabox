@@ -53,7 +53,7 @@ server {
 }
 EOF
 
-sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf]
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf
 nginx -s reload
 echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP > $STORAGE_ROOT/dns/custom.yaml
 echo "Downloading external certbot because we want to manage this certificate"
