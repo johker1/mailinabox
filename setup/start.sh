@@ -143,7 +143,7 @@ source setup/firstuser.sh
 
 echo Installing collabora
 source setup/collabora.sh
-
+management/ssl_certificate.py
 # Done.
 echo
 echo "-----------------------------------------------"
