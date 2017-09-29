@@ -112,7 +112,7 @@ source setup/management.sh
 source setup/munin.sh
 source setup/spreedme.sh
 echo Adding collabora domain to DNS
-echo collabora.$PRIMARY_HOSTNAME: $PRIMARY_IP > /home/user-data/dns/custom.yaml
+echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP > /home/user-data/dns/custom.yaml
 
 # Wait for the management daemon to start...
 until nc -z -w 4 127.0.0.1 10222
