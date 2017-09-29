@@ -52,6 +52,7 @@ server {
    }
 }
 EOF
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf
 
 
 echo "Downloading external certbot because we want to manage this certificate"
