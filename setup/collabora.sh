@@ -53,20 +53,14 @@ server {
 }
 EOF
 
-<<<<<<< HEAD
-sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf
+
+### APACHE IS RUNNING GOD KNOWS WHY....
+echo "WHY APACHE RUNNING??????????"
 service apache2 stop
 service nginx restart
+
 echo "Downloading external certbot because we want to manage this certificate"
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 /certbot-auto --nginx --agree-tos --rsa-key-size 4096 --register-unsafely-without-email --redirect -d collabora.$PRIMARY_HOSTNAME
-=======
-sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.conf
-nginx -s reload
-echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP > $STORAGE_ROOT/dns/custom.yaml
-echo "Downloading external certbot because we want to manage this certificate"
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
-./certbot-auto --nginx --non-interactive --no-eff-email --agree-tos --rsa-key-size 4096 --email root@localhost --redirect -d collabora.$PRIMARY_HOSTNAME
->>>>>>> d5c30242d63811277bf32b05209a64f31aa83cf3
