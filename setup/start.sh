@@ -130,15 +130,12 @@ tools/web_update
 # Give fail2ban another restart. The log files may not all have been present when
 # fail2ban was first configured, but they should exist now.
 restart_service fail2ban
-service apache2 stop
-restart_service nginx
 # If DNS is already working, try to provision TLS certficates from Let's Encrypt.
 # Suppress extra reasons why domains aren't getting a new certificate.
 management/ssl_certificates.py -q
 
 # If there aren't any mail users yet, create one.
 source setup/firstuser.sh
-source setup/collabora.sh
 
 echo Installing collabora
 source setup/collabora.sh
