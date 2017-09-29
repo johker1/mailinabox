@@ -111,7 +111,8 @@ source setup/zpush.sh
 source setup/management.sh
 source setup/munin.sh
 source setup/spreedme.sh
-source setup/collabora.sh
+echo Adding collabora domain to DNS
+echo collabora.$PRIMARY_HOSTNAME: $PRIMARY_IP > /home/user-data/dns/custom.yaml
 
 # Wait for the management daemon to start...
 until nc -z -w 4 127.0.0.1 10222
@@ -125,6 +126,7 @@ done
 tools/dns_update
 tools/web_update
 
+
 # Give fail2ban another restart. The log files may not all have been present when
 # fail2ban was first configured, but they should exist now.
 restart_service fail2ban
@@ -135,6 +137,9 @@ management/ssl_certificates.py -q
 
 # If there aren't any mail users yet, create one.
 source setup/firstuser.sh
+
+echo Installing collabora
+source setup/collabora.sh
 
 # Done.
 echo

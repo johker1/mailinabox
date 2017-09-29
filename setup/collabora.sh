@@ -53,10 +53,10 @@ server {
 }
 EOF
 
-sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf]
-nginx -s reload
-echo collabora.$PRIMARY_HOSTNAME: $PRIMARY_IP > /home/user-data/dns/custom.yaml
+sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/local.conf
+service apache2 stop
+service nginx restart
 echo "Downloading external certbot because we want to manage this certificate"
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
-./certbot-auto --non-interactive --nginx --agree-tos --rsa-key-size 4096 --email hostmaster@$PRIMARY_HOSTNAME --redirect -d collabora.$PRIMARY_HOSTNAME
+/certbot-auto --nginx --agree-tos --rsa-key-size 4096 --register-unsafely-without-email --redirect -d collabora.$PRIMARY_HOSTNAME
