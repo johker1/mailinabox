@@ -59,6 +59,6 @@ echo "Downloading external certbot because we want to manage this certificate"
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 ./certbot-auto --os-packages-only
-apt purge apache -y
+apt purge apache2 -y
 service nginx restart
 ./certbot-auto --nginx --agree-tos --rsa-key-size 4096 --register-unsafely-without-email --redirect -d collabora.$PRIMARY_HOSTNAME
