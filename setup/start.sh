@@ -111,6 +111,7 @@ source setup/zpush.sh
 source setup/management.sh
 source setup/munin.sh
 source setup/spreedme.sh
+
 echo Adding collabora domain to DNS
 echo collabora.$PRIMARY_HOSTNAME: $PUBLIC_IP > /home/user-data/dns/custom.yaml
 
