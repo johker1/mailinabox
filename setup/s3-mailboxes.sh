@@ -72,7 +72,7 @@ esac
 exit 0
 EOF
 
-echo aws s3api create-bucket --bucket $bucketname --region $awsregion | bash
+echo aws s3api create-bucket --bucket $bucketname --region $awsregion -create-bucket-configuration LocationConstraint=$awsregion  bash
 
 mkfs.s3ql s3://$bucketname --authfile /root/authfile.s3ql
 
