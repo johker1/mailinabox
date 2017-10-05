@@ -21,14 +21,14 @@ aws_secret_access_key = $awskey
 region = $awsregion
 EOF
 
-cat > /root/authfile.s3ql <<EOF
+cat > /authfile.s3ql <<EOF
 [fs3]
 storage-url: s3://$bucketname/
 backend-login: $awsid
 backend-password: $awskey
 fs-passphrase: $fspasswd
 EOF
-chmod 400 /root/authfile.s3ql
+chmod 400 /authfile.s3ql
 
 cat > /etc/init.d/s3ql << 'EOF'
 #! /bin/sh
@@ -56,8 +56,8 @@ case "$1" in
     rm -rf "$DIR"
 
     modprobe fuse
-    fsck.s3ql --authfile /root/authfile.s3ql --batch s3://johker.xyz-mailboxes/
-    exec mount.s3ql --allow-other --authfile /root/authfile.s3ql s3://johker.xyz-mailboxes/ /$
+    fsck.s3ql --authfile /authfile.s3ql --batch s3://BUCKETNAME/
+    exec mount.s3ql --allow-other --authfile /authfile.s3ql s3://BUCKETNAME/ /home/user-data/mail/mailboxes/
 
     ;;
   stop)
@@ -71,10 +71,12 @@ esac
 
 exit 0
 EOF
+sed -i -e "s/BUCKETNAME/${bucketname}/g" /etc/init.d/s3ql
 
-echo aws s3api create-bucket --bucket $bucketname --region $awsregion -create-bucket-configuration LocationConstraint=$awsregion  bash
 
-mkfs.s3ql s3://$bucketname --authfile /root/authfile.s3ql
+echo aws s3api create-bucket --bucket $bucketname --region $awsregion -create-bucket-configuration LocationConstraint=$awsregion | bash
+
+mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql
 
 update-rc.d -f s3ql default
 service s3ql start
