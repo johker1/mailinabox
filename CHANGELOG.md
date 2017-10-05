@@ -4,6 +4,18 @@ CHANGELOG
 In Development
 --------------
 
+Web:
+
+* Updated cipher list to Mozilla's current intermediate recommendation.
+* Updated HSTS header to use longer six month duration.
+
+Mail:
+
+* Updated IMAP/POP cipher list to Mozilla's current mondern recommendation.
+
+v0.24 (October 3, 2017)
+-----------------------
+
 System:
 
 * Install PHP7 via a PPA. Switch to the on-demand process manager.
