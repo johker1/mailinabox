@@ -8,8 +8,6 @@ echo "AWS KEY"
 read awskey
 echo "AWS Region"
 read awsregion
-echo "Filesystem password"
-read fspasswd
 echo "Bucket Name"
 read bucketname
 
@@ -26,7 +24,6 @@ cat > /authfile.s3ql <<EOF
 storage-url: s3://$bucketname/
 backend-login: $awsid
 backend-password: $awskey
-fs-passphrase: $fspasswd
 EOF
 chmod 400 /authfile.s3ql
 
@@ -76,7 +73,7 @@ sed -i -e "s/BUCKETNAME/${bucketname}/g" /etc/init.d/s3ql
 
 echo aws s3api create-bucket --bucket $bucketname --region $awsregion --create-bucket-configuration LocationConstraint=$awsregion | bash
 
-mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql
+mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql --plain
 
 update-rc.d -f s3ql default
 service s3ql start
