@@ -74,6 +74,6 @@ echo aws s3api create-bucket --bucket $bucketname --region $awsregion --create-b
 
 mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql --plain
 
-update-rc.d -f s3ql default
+update-rc.d -f s3ql defaults
 service s3ql start
 update-rc.d s3ql enable
