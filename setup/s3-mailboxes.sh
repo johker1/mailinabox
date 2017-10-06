@@ -1,6 +1,6 @@
 source /etc/mailinabox.conf # load global vars
 source setup/functions.sh # load our functions
-if [! -f $HOME/.aws/config ]; then
+if [ ! -f $HOME/.aws/config ]; then
 apt_install awscli s3ql
 echo "AWS ID"
 read awsid
