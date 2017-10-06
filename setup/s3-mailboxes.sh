@@ -1,6 +1,6 @@
 source /etc/mailinabox.conf # load global vars
 source setup/functions.sh # load our functions
-
+if [! -f $HOME/.aws/config ]; then
 apt_install awscli s3ql
 echo "AWS ID"
 read awsid
@@ -79,3 +79,4 @@ mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql --plain
 update-rc.d -f s3ql defaults
 service s3ql start
 update-rc.d s3ql enable
+fi
