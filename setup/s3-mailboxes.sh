@@ -13,10 +13,10 @@ read bucketname
 
 mkdir $HOME/.aws/
 cat > $HOME/.aws/config <<EOF
-[default]
-aws_access_key_id = $awsid
-aws_secret_access_key = $awskey
-region = $awsregion
+  [default]
+  aws_access_key_id = $awsid
+  aws_secret_access_key = $awskey
+  region = $awsregion
 EOF
 
 cat > /authfile.s3ql <<EOF
@@ -69,7 +69,6 @@ esac
 exit 0
 EOF
 sed -i -e "s/BUCKETNAME/${bucketname}/g" /etc/init.d/s3ql
-
 
 echo aws s3api create-bucket --bucket $bucketname --region $awsregion --create-bucket-configuration LocationConstraint=$awsregion | bash
 
