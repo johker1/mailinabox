@@ -70,6 +70,8 @@ exit 0
 EOF
 sed -i -e "s/BUCKETNAME/${bucketname}/g" /etc/init.d/s3ql
 
+chmod +x /etc/init.d/s3ql
+
 echo aws s3api create-bucket --bucket $bucketname --region $awsregion --create-bucket-configuration LocationConstraint=$awsregion | bash
 
 mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql --plain
