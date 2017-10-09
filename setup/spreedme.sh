@@ -2,22 +2,23 @@ source /etc/mailinabox.conf # load global vars
 
 echo "Adding Spreed ME Web RTc Server Ubuntu Repo and Instalation"
 apt-add-repository ppa:strukturag/spreed-webrtc-unstable -y
-apt update
-apt dist-upgrade -y
-apt install -y spreed-webrtc
+
+echo "Adding coturn REPO"
+add-apt-repository ppa:fancycode/coturn -y
+
+echo Updating system packages...
+hide_output apt-get update
+apt_get_quiet upgrade
+
+apt_install spreed-webrtc
 
 echo "Enabling spreedme in rc.local"
 echo "service spreed-webrtc start" >> /etc/rc.local
 echo "Starting spreedme"
 service spreed-webrtc start
 
-echo "Adding coturn REPO"
-add-apt-repository ppa:fancycode/coturn -y
-apt update
-apt dist-upgrade -y
-
 echo "Adding turn Server has dependency of Spreed Me"
-apt install coturn -y
+apt_install coturn
 
 echo "Enabling TURNSERVER"
 echo TURNSERVER_ENABLED=1 > /etc/default/coturn

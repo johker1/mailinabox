@@ -78,5 +78,5 @@ mkfs.s3ql s3://$bucketname/ --authfile /authfile.s3ql --plain
 
 update-rc.d -f s3ql defaults
 service s3ql start
-update-rc.d s3ql enable
+update-rc.d s3ql enable >> /dev/null
 fi

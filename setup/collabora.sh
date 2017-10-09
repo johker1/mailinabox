@@ -1,11 +1,15 @@
 source /etc/mailinabox.conf # load global vars
+source setup/functions.sh # load our functions
 
 echo "Installing Docker for Collabora"
-apt install docker.io -y
+apt_install docker.io
 
 echo "Adding PPA for Canonical Kernel Team and installing linux-virtual-lts-xenial (Collabora dependency)"
 add-apt-repository ppa:canonical-kernel-team/ppa -y
-apt-get update
+echo Updating system packages...
+hide_output apt-get update
+apt_get_quiet upgrade
+
 apt install linux-virtual-lts-xenial -y
 
 
@@ -58,7 +62,7 @@ sed -i -e "s/PRIMAHOSTNAME/${PRIMARY_HOSTNAME}/g" /etc/nginx/conf.d/collabora.co
 echo "Downloading external certbot because we want to manage this certificate"
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
-./certbot-auto --os-packages-only
+./certbot-auto --os-packages-only --quiet --non-interactive
 service apache2 stop
 service nginx restart
-./certbot-auto --nginx --agree-tos --rsa-key-size 4096 --register-unsafely-without-email --redirect -d collabora.$PRIMARY_HOSTNAME
+./certbot-auto --nginx --quiet --non-interactive --agree-tos --rsa-key-size 4096 --register-unsafely-without-email --redirect -d collabora.$PRIMARY_HOSTNAME
