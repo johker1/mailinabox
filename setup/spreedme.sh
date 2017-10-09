@@ -89,7 +89,7 @@ sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /etc/default/coturn
 
 sed -i -e "s/SPREEDSECRET/${SPREEDSECRET}/g" /usr/local/lib/owncloud/apps/spreedme/config/config.php
 
-sed -i '/isSpreedMeAdmin/!b;n;creturn true;' /usr/local/lib/owncloud/apps/spreedme/user/user.php
+sed -i '/public function isSpreedMeAdmin() {/!b;n;creturn true;' /usr/local/lib/owncloud/apps/spreedme/user/user.php
 
 service spreed-webrtc restart
 service coturn restart
