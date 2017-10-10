@@ -39,5 +39,5 @@ def send_mail(send_from, send_to, subject, text, files=None,
 send_mail("team@cloudfirst.pt",sys.argv[1],
             "OSX e IOS Profile",
             "Your Profile for Mail, Calendar and Contacts\n Just double-click the attachment!",
-            files="/var/lib/mailinabox/mobileconfig.xml"
+            files=["/var/lib/mailinabox/mobileconfig.xml"]
             )
