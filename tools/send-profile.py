@@ -18,5 +18,5 @@ msg['To'] = sys.argv[1]
 # Send the message via our own SMTP server, but don't include the
 # envelope header.
 s = smtplib.SMTP('localhost')
-s.sendmail('team@cloudfirst.pt', [email], msg.as_string())
+s.sendmail('team@cloudfirst.pt', [sys.argv[1]], msg.as_string())
 s.quit()
