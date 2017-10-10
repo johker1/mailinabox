@@ -8,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 # the text file contains only ASCII characters.
 with open("/home/ubuntu/mailinabox/tools/mensagem.txt", 'rb') as fp:
     # Create a text/plain message
-    msg = MIMEText(fp.read(),"plain","utf-8")
+    msg = MIMEMultipart(fp.read(),"plain","utf-8")
 # me == the sender's email address
 # you == the recipient's email address
 msg['Subject'] = 'OSX e IOS MOBILE CONFIG'
