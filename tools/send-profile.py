@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
     import smtplib, sys
 	# Import the email modules we'll need
         from email.mime.text import MIMEText
