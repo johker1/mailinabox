@@ -17,7 +17,7 @@ msg['To'] = sys.argv[1]
 
 # Attach file
 filename = "/var/lib/mailinabox/mobileconfig.xml"
-f = file(filename)
+f = open(filename)
 attachment = MIMEText(f.read())
 attachment.add_header('Content-Disposition', 'attachment', filename=filename)           
 msg.attach(attachment)
