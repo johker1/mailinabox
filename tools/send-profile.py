@@ -11,7 +11,7 @@
                 msg = MIMEText(fp.read(),"plain","utf-8")
         # me == the sender's email address
         # you == the recipient's email address
-        msg['Subject'] = 'The contents of %s'
+        msg['Subject'] = 'OSX e IOS MOBILE CONFIG'
         msg['From'] = 'team@cloudfirst.pt'
         msg['To'] = sys.argv[1]
 
