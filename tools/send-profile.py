@@ -22,7 +22,6 @@ def send_mail(send_from, send_to, subject, text, files=None,
 
     msg.attach(MIMEText(text))
 
-
     for f in files or []:
         with open(f, "rb") as fil:
             part = MIMEApplication(
@@ -40,6 +39,6 @@ def send_mail(send_from, send_to, subject, text, files=None,
 
 send_mail("team@cloudfirst.pt",sys.argv[1],
             "OSX e IOS Profile",
-            "Your Profile for Mail, Calendar and Contacts\n Just double-click it!",
+            "Your Profile for Mail, Calendar and Contacts\n Just double-click the attachment!",
             files="/var/lib/mailinabox/mobileconfig.xml"
             )
