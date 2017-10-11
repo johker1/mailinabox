@@ -47,9 +47,10 @@ del sys.argv[0]
 send_mail("team@cloudfirst.pt",
                 [sys.argv[0]],
                 "OSX e IOS Profile",
-                'Para configurar o email, calendário e contactos basta utilizar o perfil em anexo.\n'
-                'Para tal basta salvar o anexo e fazer double-click no ficheiro osx.mobileconf\n'
-                'Preencha com o seu email e password em todos os campos\n\n'
-                ' Obrigado e Bem Vindo!',
+                '\nPara configurar o email, calendário e contactos basta utilizar o perfil em anexo.\n'
+                '1 - salvar o anexo \n'
+                '2 - fazer double-click no ficheiro no anexo guardado (osx.mobileconf)\n'
+                '3 - Preencha com o seu email e password em todos os campos\n\n'
+                '       Obrigado e Bem Vindo!',
                 "/var/lib/mailinabox/mobileconfig.xml.LASTSENT")
 
