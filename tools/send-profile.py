@@ -31,16 +31,14 @@ def send_mail(send_from, send_to, subject, text, file,
     smtp = smtplib.SMTP(server)
     smtp.sendmail(send_from, send_to, msg.as_string())
     smtp.close()
-
 try:
         os.remove("/var/lib/mailinabox/mobileconfig.xml.LASTSENT")
 except OSError:
         pass
-user, rest = sys.argv[1].split('@')
 with open('/var/lib/mailinabox/mobileconfig.xml') as infile, open('/var/lib/mailinabox/mobileconfig.xml.LASTSENT', 'w') as outfile:
         for line in infile:
                 line= line.replace('USER_EMAIL', sys.argv[1])
-                line= line.replace('USER_USER', user)           
+                line= line.replace('USER_USER', sys.argv[1].split('@')[0])   
                 outfile.write(line)
 
 del sys.argv[0]
