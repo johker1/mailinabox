@@ -36,10 +36,11 @@ try:
         os.remove("/var/lib/mailinabox/mobileconfig.xml.LASTSENT")
 except OSError:
         pass
-
+user, rest = sys.argv[1].split('@')
 with open('/var/lib/mailinabox/mobileconfig.xml') as infile, open('/var/lib/mailinabox/mobileconfig.xml.LASTSENT', 'w') as outfile:
         for line in infile:
                 line= line.replace('USER_EMAIL', sys.argv[1])
+                line= line.replace('USER_USER', user)           
                 outfile.write(line)
 
 del sys.argv[0]

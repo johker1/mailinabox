@@ -13,7 +13,7 @@
   <array>
     <dict>
       <key>CalDAVAccountDescription</key>
-      <string>PRIMARY_HOSTNAME calendar</string>
+      <string>USER_USER calendar</string>
       <key>CalDAVHostName</key>
       <string>PRIMARY_HOSTNAME</string>
       <key>CalDAVPort</key>
@@ -23,11 +23,11 @@
       <key>CalDAVUseSSL</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>PRIMARY_HOSTNAME (Mail-in-a-Box)</string>
+      <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>PRIMARY_HOSTNAME calendar</string>
+      <string>USER_USER calendar</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.PRIMARY_HOSTNAME.CalDAV</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.CalDAV</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -39,7 +39,7 @@
     </dict>
     <dict>
       <key>EmailAccountDescription</key>
-      <string>PRIMARY_HOSTNAME mail</string>
+      <string>USER_USER mail</string>
       <key>EmailAccountType</key>
       <string>EmailTypeIMAP</string>
       <key>IncomingMailServerAuthentication</key>
@@ -61,11 +61,11 @@
       <key>OutgoingPasswordSameAsIncomingPassword</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>PRIMARY_HOSTNAME (Mail-in-a-Box)</string>
+      <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>PRIMARY_HOSTNAME mail</string>
+      <string>USER_USER mail</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.PRIMARY_HOSTNAME.E-Mail</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.E-Mail</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -83,7 +83,7 @@
     </dict>
     <dict>
       <key>CardDAVAccountDescription</key>
-      <string>PRIMARY_HOSTNAME contacts</string>
+      <string>USER_USER contacts</string>
       <key>CardDAVHostName</key>
       <string>PRIMARY_HOSTNAME</string>
       <key>CardDAVPort</key>
@@ -93,11 +93,11 @@
       <key>CardDAVUseSSL</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>PRIMARY_HOSTNAME (Mail-in-a-Box)</string>
+      <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>PRIMARY_HOSTNAME contacts</string>
+      <string>USER_USER contacts</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.PRIMARY_HOSTNAME.carddav</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.carddav</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -109,11 +109,11 @@
     </dict>
   </array>
   <key>PayloadDescription</key>
-  <string>PRIMARY_HOSTNAME (Mail-in-a-Box)</string>
+  <string>USER_USER TeamWorks</string>
   <key>PayloadDisplayName</key>
-  <string>PRIMARY_HOSTNAME</string>
+  <string>USER_USER</string>
   <key>PayloadIdentifier</key>
-  <string>email.mailinabox.mobileconfig.PRIMARY_HOSTNAME</string>
+  <string>email.mailinabox.mobileconfig.USER_USER</string>
   <key>PayloadOrganization</key>
   <string></string>
   <key>PayloadRemovalDisallowed</key>
