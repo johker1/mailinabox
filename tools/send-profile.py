@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 import smtplib, sys, os
 from os.path import basename
