@@ -38,7 +38,7 @@ except OSError:
 with open('/var/lib/mailinabox/mobileconfig.xml') as infile, open('/var/lib/mailinabox/mobileconfig.xml.LASTSENT', 'w') as outfile:
         for line in infile:
                 line= line.replace('USER_EMAIL', sys.argv[1])
-                line= line.replace('USER_USER', sys.argv[1].split('@')[0])   
+                #line= line.replace('USER_USER', sys.argv[1].split('@')[0])   
                 outfile.write(line)
 
 del sys.argv[0]
