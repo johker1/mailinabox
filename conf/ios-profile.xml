@@ -29,7 +29,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER calendar</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.USER_DOMAIN.CalDAV</string>
+      <string>USER_USER.USER_DOMAIN.CalDAV</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -67,7 +67,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER mail</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN.E-Mail</string>
+      <string>USER_USER.USERDOMAIN.E-Mail</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -99,7 +99,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER contacts</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN.carddav</string>
+      <string>USER_USER.USERDOMAIN.carddav</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -115,7 +115,7 @@
   <key>PayloadDisplayName</key>
   <string>USER_USER</string>
   <key>PayloadIdentifier</key>
-  <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN</string>
+  <string>USER_USER.USERDOMAIN</string>
   <key>PayloadOrganization</key>
   <string></string>
   <key>PayloadRemovalDisallowed</key>
