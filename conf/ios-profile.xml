@@ -18,6 +18,8 @@
       <string>PRIMARY_HOSTNAME</string>
       <key>CalDAVPort</key>
       <real>443</real>
+      <key>CalDAVUsername</key>
+      <string>USER_EMAIL</string>
       <key>CalDAVPrincipalURL</key>
       <string>/cloud/remote.php/caldav/principals/USER_EMAIL</string>
       <key>CalDAVUseSSL</key>
@@ -27,7 +29,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER calendar</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.CalDAV</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.USER_DOMAIN.CalDAV</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -65,7 +67,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER mail</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.E-Mail</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN.E-Mail</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -97,7 +99,7 @@
       <key>PayloadDisplayName</key>
       <string>USER_USER contacts</string>
       <key>PayloadIdentifier</key>
-      <string>email.mailinabox.mobileconfig.USER_USER.carddav</string>
+      <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN.carddav</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
@@ -113,7 +115,7 @@
   <key>PayloadDisplayName</key>
   <string>USER_USER</string>
   <key>PayloadIdentifier</key>
-  <string>email.mailinabox.mobileconfig.USER_USER</string>
+  <string>email.mailinabox.mobileconfig.USER_USER.USERDOMAIN</string>
   <key>PayloadOrganization</key>
   <string></string>
   <key>PayloadRemovalDisallowed</key>
