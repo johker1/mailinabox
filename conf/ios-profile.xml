@@ -93,7 +93,9 @@
     </dict>
     <dict>
       <key>CardDAVAccountDescription</key>
-      <string>USER_USER contacts</string>
+      <string>USERDOMAIN USER_USER</string>
+      <key>CardDAVUsername</key>
+      <string>USER_EMAIL</string>      
       <key>CardDAVHostName</key>
       <string>PRIMARY_HOSTNAME</string>
       <key>CardDAVPort</key>
