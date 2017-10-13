@@ -10,7 +10,7 @@ echo Updating system packages...
 hide_output apt-get update
 apt_get_quiet upgrade
 
-apt install linux-virtual-lts-xenial -y
+apt_install linux-virtual-lts-xenial
 
 
 echo "Installing Collabora code (docker)"
