@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import smtplib, sys, os
+import smtplib, sys, os, uuid
 from os.path import basename
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
@@ -41,6 +41,10 @@ with open('/var/lib/mailinabox/mobileconfig.xml') as infile, open('/var/lib/mail
                 line= line.replace('USER_EMAIL', sys.argv[1])
                 line= line.replace('USER_USER', sys.argv[1].split('@')[0])
                 line= line.replace('USERDOMAIN', sys.argv[1].split('@')[1])
+                line= line.replace('UUID1', str(uuid.uuid4()))                
+                line= line.replace('UUID2', str(uuid.uuid4()))                
+                line= line.replace('UUID3', str(uuid.uuid4()))                
+                line= line.replace('UUID4', str(uuid.uuid4()))                
                 
                 outfile.write(line)
 
