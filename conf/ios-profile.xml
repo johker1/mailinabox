@@ -25,7 +25,7 @@
       <key>CalDAVUseSSL</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>USER_USER TeamWorks</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadDisplayName</key>
       <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
@@ -41,7 +41,7 @@
     </dict>
     <dict>
       <key>EmailAccountDescription</key>
-      <string>USER_USER mail</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>EmailAccountType</key>
       <string>EmailTypeIMAP</string>
       <key>EmailAccountName</key>
@@ -71,7 +71,7 @@
       <key>OutgoingPasswordSameAsIncomingPassword</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>USER_USER TeamWorks</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadDisplayName</key>
       <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
@@ -105,7 +105,7 @@
       <key>CardDAVUseSSL</key>
       <true/>
       <key>PayloadDescription</key>
-      <string>USER_USER TeamWorks</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadDisplayName</key>
       <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
@@ -121,7 +121,7 @@
     </dict>
   </array>
   <key>PayloadDescription</key>
-  <string>USER_USER TeamWorks</string>
+  <string>USERDOMAIN USER_USER</string>
   <key>PayloadDisplayName</key>
   <string>USERDOMAIN USER_USER</string>
   <key>PayloadIdentifier</key>
