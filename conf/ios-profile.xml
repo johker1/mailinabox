@@ -27,7 +27,7 @@
       <key>PayloadDescription</key>
       <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>USER_USER calendar</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
       <string>USER_USER.USER_DOMAIN.CalDAV</string>
       <key>PayloadOrganization</key>
@@ -44,6 +44,10 @@
       <string>USER_USER mail</string>
       <key>EmailAccountType</key>
       <string>EmailTypeIMAP</string>
+      <key>EmailAccountName</key>
+      <string>USER_EMAIL</string>
+      <key>EmailAddress</key>
+      <string>USER_EMAIL</string>      
       <key>IncomingMailServerAuthentication</key>
       <string>EmailAuthPassword</string>
       <key>IncomingMailServerHostName</key>
@@ -65,7 +69,7 @@
       <key>PayloadDescription</key>
       <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>USER_USER mail</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
       <string>USER_USER.USERDOMAIN.E-Mail</string>
       <key>PayloadOrganization</key>
@@ -97,7 +101,7 @@
       <key>PayloadDescription</key>
       <string>USER_USER TeamWorks</string>
       <key>PayloadDisplayName</key>
-      <string>USER_USER contacts</string>
+      <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
       <string>USER_USER.USERDOMAIN.carddav</string>
       <key>PayloadOrganization</key>
@@ -113,7 +117,7 @@
   <key>PayloadDescription</key>
   <string>USER_USER TeamWorks</string>
   <key>PayloadDisplayName</key>
-  <string>USER_USER</string>
+  <string>USERDOMAIN USER_USER</string>
   <key>PayloadIdentifier</key>
   <string>USER_USER.USERDOMAIN</string>
   <key>PayloadOrganization</key>
