@@ -29,7 +29,7 @@
       <key>PayloadDisplayName</key>
       <string>USERDOMAIN USER_USER</string>
       <key>PayloadIdentifier</key>
-      <string>USER_USER.USER_DOMAIN.CalDAV</string>
+      <string>USER_USER.USERDOMAIN.CalDAV</string>
       <key>PayloadOrganization</key>
       <string></string>
       <key>PayloadType</key>
