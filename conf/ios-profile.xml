@@ -47,7 +47,11 @@
       <key>EmailAccountName</key>
       <string>USER_EMAIL</string>
       <key>EmailAddress</key>
-      <string>USER_EMAIL</string>      
+      <string>USER_EMAIL</string>
+      <key>IncomingMailServerUsername</key>
+      <string>USER_EMAIL</string>
+      <key>OutgoingMailServerUsername</key>
+      <string>USER_EMAIL</string>
       <key>IncomingMailServerAuthentication</key>
       <string>EmailAuthPassword</string>
       <key>IncomingMailServerHostName</key>
